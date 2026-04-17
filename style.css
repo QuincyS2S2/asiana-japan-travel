@@ -1,0 +1,321 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #fff0f0;
+    display : flex;
+    align-items :center;
+    justify-content: space-between;
+    border-top : 3px solid #ff0000;
+    padding : 0 40px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+nav {
+    height: 100%;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    font-size: 14px;
+    color: #333;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffd6d6;
+}
+
+nav ul li a.active {
+    background-color: #ffc0c0;
+    font-weight: bold;
+}
+
+main {
+    max-width: 80%;
+    margin: 30px auto;
+    justify-content: center;
+}
+
+.banner {
+    width: 100%;
+    position: relative; /* 배너 버튼을 절대 위치로 설정하기 위해 부모 요소에 position: relative; 추가 */
+
+}
+
+.big-banner {
+    width: 100%;
+    height: 400px;
+    display : block;
+    object-fit: cover;
+}
+
+.banner-btn {
+    width: 100%;
+    position: absolute; 
+    top: 40%;
+    left: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(-50%);
+    padding : 0 20px;
+}
+
+.banner-btn li {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.banner-btn li:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.banner-txt {
+    text-align: center;
+    margin-top : 20px;
+    padding: 20px 40px;
+}
+
+.banner-txt h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.banner-txt p {
+    font-size: 14px;
+    color: #555;
+}
+
+.tab-menu {
+    width: 100%;
+}
+
+.sub-nav-btn {
+    display: flex;
+    border-bottom : 2px solid #ddd;
+justify-content: center; /* 💡 핵심: 탭 버튼들을 가로 기준 정중앙으로 예쁘게 모아줍니다! */
+}
+
+.tab-menu a {
+  display: block;
+  padding: 12px 40px;
+  text-decoration: none;
+  color: #888;
+  background-color: #f5f5f5; /* 선택 안 된 탭의 배경색 */
+  border: 2px solid #ddd;
+  border-bottom: none; 
+  font-weight: 500;
+  position: relative;
+  top: 2px; 
+}
+
+.tab-menu li.active a {
+  color: #222;
+  font-weight: bold;
+  background-color: #fff;
+  border: 2px solid #222; /* 테두리를 진하게 */
+  /* 💡 스케치하신 부분의 비밀: 하단 선을 흰색으로 덮어서 뚫린 것처럼 보이게 함 */
+  border-bottom: 2px solid #fff; 
+  z-index: 1; /* 활성화된 탭이 가장 위로 올라오게 설정 */
+}
+
+.tab-menu :nth-child(2) a {
+    border-left : none;
+    border-right : none;
+}
+
+.what-donki {
+    margin-top : 40px;
+    width: 100%;
+    display: flex;
+    padding : 0 0 60px 0;
+    justify-content: center;
+    border-bottom : 1px solid #ddd;
+    gap : 30px;
+}
+
+.donki-img {
+    width: 100%;
+    max-width: 50%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.donki-txt {
+    width: 100%;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap : 14px;
+}
+
+.donki-txt h2 {
+    font-size: 18px;
+    color: #222;
+}
+
+.donki-txt p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.donki-shop {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.donki-shop h2 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.donki-shop p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.product-list { /*3열 그리드 2줄 주력 상품*/
+    margin-top: 40px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-list li {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-list img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 이미지가 정사각형이 되도록 설정 */
+    object-fit: cover;
+}
+
+.donki-love {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.donki-love h2 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.donki-love p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.enser { /*2열 그리드 돈키호테가 사랑받는 이유*/
+    margin-top: 40px;
+    gap: 10px;
+    grid-template-columns: repeat(2, auto);
+    display : grid;
+    justify-content: space-between;
+    border-bottom : 1px solid #ddd;
+    padding : 0 0 60px 0;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    flex-shrink: 0; /* 아이콘이 줄어들지 않도록 설정 */
+    border-radius: 50%;
+    background-color: rgb(245, 245, 241);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #888;
+}
+
+.icon-txt-box {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}   
+
+.franchise {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.franchise h2 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.franchise p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.logo-box {
+    margin: 100px auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size : 34px;
+    color : #888;
+}
