@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/* CSS Document */
+/* 0420 */
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
 
 * {
     margin: 0;
@@ -6,7 +11,7 @@
     box-sizing: border-box;
 }
 
-li {
+ul {
     list-style: none;
 }
 
@@ -15,307 +20,332 @@ a {
     color: #333;
 }
 
-header {
-    width: 100%;
-    height: 60px;
-    background-color: #fff0f0;
-    display : flex;
-    align-items :center;
-    justify-content: space-between;
-    border-top : 3px solid #ff0000;
-    padding : 0 40px;
+h1 {
+    font-family: "Gowun Batang", serif;
+}
+
+p {
+    font-size: 0.9rem; /* 14px */
+    color: #333;
+    line-height: 1.4rem; /* 20px */
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+img { /* 이미지 태그는 인라인 요소이므로 블록 요소로 변경 */
+    display : block;
+    /* border : 0;
+    font-size : 0; 블럭 요소로 변경*/
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    font-family: "Gowun Batang", serif;
 }
 
-nav {
-    height: 100%;
-}
-
-nav ul {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li a {
-    font-size: 14px;
-    color: #333;
-    padding: 0 20px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #ffd6d6;
-}
-
-nav ul li a.active {
-    background-color: #ffc0c0;
-    font-weight: bold;
-}
-
-main {
-    max-width: 80%;
-    margin: 30px auto;
-    justify-content: center;
-}
-
-.banner {
+header, section, footer {
     width: 100%;
-    position: relative; /* 배너 버튼을 절대 위치로 설정하기 위해 부모 요소에 position: relative; 추가 */
+}
+
+/*----header----*/
+header {
+    height : 90px;
+    background-color: #A0BED9;
+    border-top : 10px solid #0A7AA6;
+    position : relative;
+}
+
+header > h1 {
+    position : absolute;
+    top : 10px;
+    left : 80px;
+    font-size : 2.5rem; /* 40px */
+    color : #087F8C;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header > .nav {
+    width: 100%;
+    height: 90px;
+}
+
+header > .nav ul{
+    overflow : hidden;
+    width: inherit;
+    height: inherit;
 
 }
 
-.big-banner {
-    width: 100%;
-    height: 400px;
+header > .nav ul li {
+    float: right;
+    width: 10%;
+    line-height: 80px;
+    text-align: center;
+}
+
+header > .nav ul li a {
+    color: #d4eafd;
+    text-transform: uppercase;
     display : block;
-    object-fit: cover;
-}
-
-.banner-btn {
     width: 100%;
-    position: absolute; 
-    top: 40%;
-    left: 50%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateX(-50%);
-    padding : 0 20px;
+    height : 80px;
+    transition: 0.3s;}
+
+header > .nav ul li a.home {
+background-color: #0A7AA6;
+color : #ffffff;
 }
 
-.banner-btn li {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
+header > .nav ul li a:hover:not(.home) {
+    background-color: #0A7AA6;
+    color : #ffffff;
 }
 
-.banner-btn li:hover {
-    background-color: rgba(255, 255, 255, 1);
+/*----section----*/
+
+.container{
+    width: 80%;
+    /* background-color: #BF9484; */
+    margin : auto;
+}
+.block{height : 100px;}
+.main-banner{
+    background-image: url(img/banner.jpg);
+        /* background-image: url(img/banner.jpg) no-repeat center / cover; */
+    background-position: center;
+    background-size : cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height : 600px;
+    position: relative;}
+    /* relative는 자식 요소의 위치를 기준으로 삼는다. */
+.main-banner div{
+    font-size : 7rem;
+    color : #eee;
+    opacity: 0.5;
+    position: absolute;
+    top : 244px;
 }
 
-.banner-txt {
+.main-banner :first-child {
+    left : 5%;
+}
+
+.main-banner :last-child {
+    right : 5%;
+}
+
+.main-banner div:hover {
+    opacity : 1;
+    transition : 0.3s;}
+
+.content-middle2{
+    border-bottom : 1px dotted #326173;
+    padding : 50px 0;
+}
+
+.content-bottom {
+    padding : 50px 0 30px;
+}
+
+section h3, p {
     text-align: center;
-    margin-top : 20px;
-    padding: 20px 40px;
+    margin : 20px 0;
 }
 
-.banner-txt h1 {
-    font-size: 16px;
-    margin-bottom: 10px;
+.content-top .content-top-nav {
+    width: inherit;
+    height: 50px;;
 }
 
-.banner-txt p {
-    font-size: 14px;
-    color: #555;
+.content-top .content-top-nav ul {
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
 }
 
-.tab-menu {
-    width: 100%;
+.content-top .content-top-nav ul li:first-child,
+.content-top .content-top-nav ul li:last-child {
+    border: 0;
+    border-bottom: 1px solid #326173;
+    width: 30%;
+    height: inherit;
+    background-color: transparent;
 }
 
-.sub-nav-btn {
-    display: flex;
-    border-bottom : 2px solid #ddd;
-    justify-content: center; /* 💡 핵심: 탭 버튼들을 가로 기준 정중앙으로 예쁘게 모아줍니다! */
-}
-
-.tab-menu a {
-  display: block;
-  padding: 12px 40px;
-  color: #888;
-  background-color: #f5f5f5; /* 선택 안 된 탭의 배경색 */
-  border: 2px solid #ddd;
-  border-bottom: none; 
-  font-weight: 500; /* 선택 안 된 탭의 글자 굵기 */
-  position: relative;
-  top: 2px; /* 선택 안 된 탭이 활성화된 탭보다 살짝 아래에 위치하도록 조정 */
-  transition: all 0.3s;
-}
-
-.tab-menu li.active a {
-  color: #222;
-  font-weight: bold;
-  background-color: #fff;
-  border: 2px solid #222; /* 테두리를 진하게 */
-  /* 💡 스케치하신 부분의 비밀: 하단 선을 흰색으로 덮어서 뚫린 것처럼 보이게 함 */
-  border-bottom: 2px solid #fff; 
-  z-index: 1; /* 활성화된 탭이 가장 위로 올라오게 설정 */
-}
-
-.tab-menu :nth-child(2) a {
-    border-left : none;
-    border-right : none;
-}
-
-.what-donki {
-    margin-top : 40px;
-    width: 100%;
-    display: flex;
-    padding : 0 0 60px 0;
-    justify-content: center;
-    border-bottom : 1px solid #ddd;
-    gap : 30px;
-}
-
-.donki-img {
-    width: 100%;
-    max-width: 50%;
-    height: 400px;
-    object-fit: cover;
-}
-
-.donki-txt {
-    width: 100%;
-    max-height: 300px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    gap : 14px;
-}
-
-.donki-txt h2 {
-    font-size: 18px;
-    color: #222;
-}
-
-.donki-txt p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
-}
-
-.donki-shop {
-    margin-top: 60px;
+.content-top .content-top-nav ul li {
+    float : left;
     text-align: center;
+    line-height: 50px;
+    width: calc(40%/3);
+    height : 50px;
+    border : 1px solid #326173;
+    background-color: #ccc;
 }
 
-.donki-shop h2 {
-    font-size: 18px;
-    color: #222;
-    margin-bottom: 10px;
+.content-top .content-top-nav ul li:nth-child(2) {
+    border-bottom : 0;
+    background-color: #fff;
 }
 
-.donki-shop p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
+.content-top .content-top-nav ul li:nth-child(3){
+    border-left : 0;
+    border-right : 0;
 }
 
-.product-list { /*3열 그리드 2줄 주력 상품*/
-    margin-top: 40px;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.product-list li {
+.content-top img{
     width: 100%;
     height: 100%;
-    background-color: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+.content-top-con {
+width: inherit;
+overflow : hidden;
+padding-bottom : 60px;
+border-bottom : 1px dotted #326173;
+}
+.content-top-con div {
+    float: left;
+    margin-top : 30px;
+}
+.content-top-con div:first-child{
+    width: 41.66666666667%;
 }
 
-.product-list img {
+.content-top-con div:last-child{
+    width: 56.25%;
+    float : right;
+}
+
+.content-top-con p {
+    text-align: left;
+}
+
+.content-top-con ul {
     width: 100%;
-    aspect-ratio: 1 / 1; /* 이미지가 정사각형이 되도록 설정 */
-    object-fit: cover;
+    overflow : hidden;
 }
 
-.donki-love {
-    margin-top: 60px;
-    text-align: center;
+.content-top-con ul li {
+background-image: url(img/check-solid.png);
+background-size: 15px;
+background-repeat: no-repeat;
+background-position: 0 50%;
+padding-left: 20px;
+margin : 10px 0;
 }
 
-.donki-love h2 {
-    font-size: 18px;
-    color: #222;
-    margin-bottom: 10px;
+.content-top-con ul li:hover {
+    color : #0A7AA6;
+    transition : 0.3s;
 }
 
-.donki-love p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
+
+.content-middle .con-mid-img img{
+    width: 100%;
+    height: 250px;
 }
 
-.enser { /*2열 그리드 돈키호테가 사랑받는 이유*/
-    margin-top: 40px;
-    gap: 10px;
-    grid-template-columns: repeat(2, auto);
-    display : grid;
-    justify-content: space-between;
-    border-bottom : 1px solid #ddd;
-    padding : 0 0 60px 0;
+.content-middle .con-mid-img ul{
+    overflow: hidden;
+    width: inherit;
 }
 
-.icon-box {
-    width: 60px;
-    height: 60px;
-    min-width: 60px;
-    min-height: 60px;
-    flex-shrink: 0; /* 아이콘이 줄어들지 않도록 설정 */
+.content-middle .con-mid-img ul li{
+    float: left;
+    width: 31.25%;
+    margin-right: 3.125%;
+    margin-bottom : 3.125%;
+}
+
+.content-middle .con-mid-img ul li:nth-child(3),
+.content-middle .con-mid-img ul li:last-child{
+    margin-right: 0;
+}
+
+.content-middle2{}
+
+.content-middle2 .mid2-con {}
+
+.content-middle2 .mid2-con ul {
+    width: 100%;
+    overflow: hidden;
+}
+
+.content-middle2 .mid2-con ul li {
+    width: 47.9166666666667%; /*460px*/
+    float : left;
+    /* background-color: #087F8C; */
+    margin-bottom :2.08333333333%;
+    position : relative;
+}
+
+.content-middle2 .mid2-con ul li:nth-child(2n),
+.content-middle2 .mid2-con ul li:last-child {
+    float : right;
+}
+
+/* .content-middle2 .mid2-con ul li > div {
+    float : left;
+} */
+
+.content-middle2 .mid2-con ul li .con-txt {
+    position: absolute;
+    top : 30px;
+    left : 130px;
+    /* background-color: #0A7AA6; 임시지정 */
+    line-height:12px;
+}
+
+.content-middle2 .mid2-con ul li .con-txt span {
+    color : red;
+}
+
+.content-middle2 .mid2-con ul li .con-num {
+    width : 100px;
+    height: 100px;
+    background-color:#0A7AA6;
     border-radius: 50%;
-    background-color: rgb(245, 245, 241);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #888;
+
 }
 
-.icon-txt-box {
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}   
+.mid2-con ul li .con-num > p {
+    padding-top : 30px;
+}
 
-.franchise {
-    margin-top: 60px;
+.mid-con ul li .con-txt {
+    text-align: left;
+    color : red;
+}
+
+
+
+.content-bottom ul {
+    width: 90%;
+    margin : auto;
+    overflow : hidden;
     text-align: center;
 }
 
-.franchise h2 {
-    font-size: 18px;
-    color: #222;
-    margin-bottom: 10px;
+.content-bottom ul li {
+    display : inline-block;
+    margin : 1.5625% 2.08333333333%;
+    text-align: center;
+}
+.content-bottom ul li i {
+    font-size : 3rem;
+    color : #ccc;
 }
 
-.franchise p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
+.content-bottom ul li i:hover {
+    color : #0A7AA6;
+    transition : 0.3s;
 }
 
-.logo-box {
-    margin: 100px auto;
-    display: flex;
-    gap: 20px;
+footer {
+    width: 100%;
+    height: 300px;
+    background-color: #A0BED9;
+    border-top : 10px solid #0A7AA6;
+    display : flex;
     justify-content: center;
-    font-size : 34px;
-    color : #888;
+    align-items: center;
 }
